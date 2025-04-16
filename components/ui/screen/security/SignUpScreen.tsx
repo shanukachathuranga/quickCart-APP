@@ -11,9 +11,10 @@ import {
 import { TextInput, Button, Icon } from "react-native-paper";
 
 const logo = require("../../../../assets/images/logo.jpeg");
-export default function LoginScreen({navigation}:any) {
+export default function SignUpScreen({navigation}:any) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [displayName, setDisplayName] = useState("");
   return (
     <ScrollView style={styles.container}>
       <View style={styles.logoWrapper}>
@@ -41,23 +42,24 @@ export default function LoginScreen({navigation}:any) {
             onChangeText={(text) => setPassword(text)}
           />
         </View>
-        <View style={styles.forgotPwButtonOuter}>
-          <Button
-            textColor={COLORS.blue}
-            mode="text"
-            onPress={() => console.log("Forgot password Pressed")}
-          >
-            Forgot Password?
-          </Button>
+        <View style={styles.formModel}>
+          <TextInput
+            selectionColor={COLORS.blue}
+            activeOutlineColor={COLORS.blue}
+            mode="outlined"
+            label="Display Name"
+            value={displayName}
+            onChangeText={(text) => setDisplayName(text)}
+          />
         </View>
         <View style={{ marginTop: 5 }}>
           <Button
             textColor={COLORS.light}
             buttonColor={COLORS.blue}
             mode="contained"
-            onPress={() => console.log("Login Pressed")}
+            onPress={() => console.log("Register Pressed")}
           >
-            Login
+            Register
           </Button>
           <Text style={styles.seperationText}>OR</Text>
         </View>
@@ -88,9 +90,9 @@ export default function LoginScreen({navigation}:any) {
             textColor={COLORS.light}
             buttonColor={COLORS.orange}
             mode="contained"
-            onPress={() => navigation.navigate("SignUp")}
+            onPress={() => navigation.navigate('Login')}
           >
-            Register with the Email
+            Already have an Account?
           </Button>
         </View>
       </View>
@@ -99,13 +101,12 @@ export default function LoginScreen({navigation}:any) {
 }
 
 const styles = StyleSheet.create({
-  iconOuter: {
-  },
+  iconOuter: {},
   socialLoginWrapper: {
-    marginTop:20,
-    flexDirection:'row',
-    justifyContent:'center',
-    gap:40
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 40,
   },
   seperationText: {
     marginTop: 20,

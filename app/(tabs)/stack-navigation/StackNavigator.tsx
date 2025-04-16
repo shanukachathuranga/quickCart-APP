@@ -9,6 +9,7 @@ import ProfileScreen from "@/components/ui/screen/other/ProfileScreen";
 import SettingsScreen from "@/components/ui/screen/other/SettingsScreen";
 import VouchersScreen from "@/components/ui/screen/other/VouchersScreen";
 import LoginScreen from "@/components/ui/screen/security/LoginScreen";
+import SignUpScreen from "@/components/ui/screen/security/SignUpScreen";
 
 const Stack = createStackNavigator();
 export default function StackNavigator() {
@@ -63,6 +64,11 @@ export default function StackNavigator() {
         name={"Login"}
         options={{ title: "Login Here" }}
         component={LoginScreen}
+      />
+      <Stack.Screen 
+        name={"SignUp"}
+        options={{title: "SignUp Here"}}
+        component={SignUpScreen}
       />
     </Stack.Navigator>
   );

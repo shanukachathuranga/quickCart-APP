@@ -37,7 +37,7 @@ export default function SplashScreen({ onFinish }: any) {
       </View>
       <View style={styles.bottom}>
         <Text>Version: {appJson.expo.version}</Text>
-        <Text>Version: {appJson.expo.author}</Text>
+        <Text>Author: {appJson.expo.author}</Text>
       </View>
     </View>
   );

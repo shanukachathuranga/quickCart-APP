@@ -3,6 +3,7 @@ import Dashboard from "@/components/ui/screen/Dashboard";
 import SplashScreen from "@/components/ui/screen/SplashScreen";
 import { useState } from "react";
 import { Image, StyleSheet, Platform, View, Text } from "react-native";
+import StackNavigator from "./stack-navigation/StackNavigator";
 
 export default function HomeScreen() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +16,7 @@ export default function HomeScreen() {
           }}
         />
       ) : (
-        <Dashboard/>
+        <StackNavigator/>
       )}
     </View>
   );
